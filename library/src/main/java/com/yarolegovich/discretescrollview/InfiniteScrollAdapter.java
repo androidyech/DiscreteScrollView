@@ -12,8 +12,7 @@ import java.util.Locale;
 
 public class InfiniteScrollAdapter<T extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<T>
         implements DiscreteScrollLayoutManager.InitialPositionProvider {
-
-    private static final int CENTER = Integer.MAX_VALUE / 2;
+    private static  int CENTER = Integer.MAX_VALUE / 2;
     private static final int RESET_BOUND = 100;
     private static boolean isSetMaxValue = true;
 
@@ -24,6 +23,7 @@ public class InfiniteScrollAdapter<T extends RecyclerView.ViewHolder> extends Re
     public static <T extends RecyclerView.ViewHolder> InfiniteScrollAdapter<T> wrap(
             @NonNull RecyclerView.Adapter<T> adapter,boolean misSetMaxValue) {
         isSetMaxValue = misSetMaxValue;
+        if(!isSetMaxValue) CENTER = 0;
         return new InfiniteScrollAdapter<>(adapter);
     }
 
