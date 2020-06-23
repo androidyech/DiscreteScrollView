@@ -364,6 +364,7 @@ class DiscreteScrollLayoutManager extends RecyclerView.LayoutManager {
             checkTargetPosition(state, position);
         } catch (Exception e) {
             e.printStackTrace();
+            currentPosition = position;
             return;
         }
         if (currentPosition == NO_POSITION) {
