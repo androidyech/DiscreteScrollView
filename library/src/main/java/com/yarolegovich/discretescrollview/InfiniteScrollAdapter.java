@@ -23,7 +23,7 @@ public class InfiniteScrollAdapter<T extends RecyclerView.ViewHolder> extends Re
     public static <T extends RecyclerView.ViewHolder> InfiniteScrollAdapter<T> wrap(
             @NonNull RecyclerView.Adapter<T> adapter,boolean misSetMaxValue) {
         isSetMaxValue = misSetMaxValue;
-        if(!isSetMaxValue) CENTER = 0;
+        if(!isSetMaxValue) CENTER = 1;
         return new InfiniteScrollAdapter<>(adapter);
     }
 
