@@ -360,7 +360,12 @@ class DiscreteScrollLayoutManager extends RecyclerView.LayoutManager {
         if (currentPosition == position || pendingPosition != NO_POSITION) {
             return;
         }
-        checkTargetPosition(state, position);
+        try {
+            checkTargetPosition(state, position);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return;
+        }
         if (currentPosition == NO_POSITION) {
             //Layout not happened yet
             currentPosition = position;
